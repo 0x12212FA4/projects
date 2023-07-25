@@ -6,10 +6,10 @@ def scrapper(url):
         r = requests.get(url)
         soup = BeautifulSoup(r.content, 'html.parser').text.split()
 
-        with open('scraper.txt','a') as nigga:
+        with open('scraper.txt','a') as file:
             for line in soup:
                 if line.isalpha() and not line.isupper():
-                    nigga.write(f'{line.lower()}\n')
+                    file.write(f'{line.lower()}\n')
     except:
         pass
 
